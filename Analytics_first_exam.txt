@@ -1,0 +1,29 @@
+191641
+11
+18134
+4756
+15536
+2308
+a
+May 2006
+
+
+
+str(mvtWeek);
+which.max(mvtWeek$ID)
+which.min(mvtWeek$Beat)
+is.numeric(mvtWeek$Arrest)
+table(mvtWeek$Arrest)
+alley <- subset(mvtWeek,mvtWeek$LocationDescription =="ALLEY")
+mvtWeek$DateConvert = as.Date(strptime(mvtWeek$Date, "%m/%d/%y %H:%M"))
+summary(mvtWeek$DateConvert)
+
+alley
+count(mvtWeek$Arrest,"TRUE")
+mvtWeek$Date[3]
+
+TopLocations = c("STREET", "PARKING LOT/GARAGE(NON.RESID.)", "ALLEY", "GAS STATION", "DRIVEWAY - RESIDENTIAL")
+
+Top5 = subset(mvt, LocationDescription %in% TopLocations)
+
+Top5 = subset(mvt, LocationDescription=="STREET" | LocationDescription=="PARKING LOT/GARAGE(NON.RESID.)" | LocationDescription=="ALLEY" | LocationDescription=="GAS STATION" | LocationDescription=="DRIVEWAY - RESIDENTIAL")
